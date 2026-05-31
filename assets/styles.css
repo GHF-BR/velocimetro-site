@@ -6,7 +6,9 @@
 }
 
 .image-shot {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 14px;
   background: rgba(255, 255, 255, 0.045);
   border-style: solid;
@@ -25,14 +27,25 @@
 
 .image-shot figcaption {
   margin-top: 12px;
-  color: rgba(238, 246, 255, 0.74);
-  font-weight: 800;
+  color: rgba(238, 246, 255, 0.78);
+  font-weight: 900;
   line-height: 1.35;
 }
 
-.pending-shot span {
-  display: block;
-  margin-top: 8px;
-  color: rgba(238, 246, 255, 0.52);
-  font-size: 14px;
+.wide-shot {
+  grid-column: span 2;
+}
+
+.wide-shot img {
+  max-height: 360px;
+}
+
+@media (max-width: 860px) {
+  .wide-shot {
+    grid-column: span 1;
+  }
+
+  .wide-shot img {
+    max-height: 620px;
+  }
 }
